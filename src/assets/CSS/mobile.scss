@@ -1,13 +1,21 @@
+.header{
+  padding: 0 0.3rem;
+}
+
 .container {
   flex-direction: column;
   width: 100%;
-  .main-part{
+  margin: 0;
+
+  .main-part {
     order: 1;
   }
-  .left{
+
+  .left {
     order: 2;
   }
-  .right{
+
+  .right {
     order: 3;
   }
 }

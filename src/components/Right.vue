@@ -8,7 +8,8 @@ export default {
 };
 </script>
 
-<style scoped>
+<style scoped lang="scss">
+@import "~@/assets/CSS/variables.scss";
 .right {
   min-width: 16.25rem;
   height: 25rem;

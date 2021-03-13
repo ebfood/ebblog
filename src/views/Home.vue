@@ -28,11 +28,12 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@import "~@/assets/CSS/variables.scss";
 .container {
   display: flex;
-  width: 90%;
+  width: $heartWidth;
   height: 200rem;
-  margin: 0 auto;
+  margin: 1.8rem auto;
 }
 
 @media screen and (min-width: 320px) and (max-width: 749px) {

@@ -9,6 +9,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@import "~@/assets/CSS/variables.scss";
 .main-part {
   flex: 1;
   //min-width: 37.5rem;

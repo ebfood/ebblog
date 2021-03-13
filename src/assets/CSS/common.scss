@@ -1,3 +1,5 @@
+@import "variables.scss";
+
 $no: 15; //划分15分
 
 * {
@@ -9,7 +11,7 @@ $no: 15; //划分15分
 body {
   min-width: 320px;
   line-height: 1.5;
-  font-family: Arial, Helvetica, STHeiTi, sans-serif;
+  // font-family: Arial, Helvetica, STHeiTi, sans-serif;
   background-color: #f3f5f9;
 }
 

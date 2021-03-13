@@ -13,5 +13,6 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: $fontColor;
+  background-color: $backColor;
 }
 </style>

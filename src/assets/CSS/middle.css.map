@@ -1,1 +1,1 @@
-{"version":3,"sourceRoot":"","sources":["middle.scss","variables.scss"],"names":[],"mappings":"AACA;EACE;EACA;;AACA;EACE;;AAEF;EACE;;AAEF;EACE;EACA,KCXS;EDYT","file":"middle.css"}
+{"version":3,"sourceRoot":"","sources":["middle.scss"],"names":[],"mappings":"AACA;EAEE;;AACA;EACE;;AAEF;EACE;;AAEF;EACE;EACA;EACA","file":"middle.css"}
