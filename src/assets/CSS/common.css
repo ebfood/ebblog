@@ -1,0 +1,22 @@
+* {
+  border: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  line-height: 1.5;
+  font-family: Arial, Helvetica, STHeiTi, sans-serif;
+  background-color: #f3f5f9;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+/*# sourceMappingURL=common.css.map */

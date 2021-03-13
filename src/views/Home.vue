@@ -1,18 +1,45 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <header-nav></header-nav>
+    <div class="container">
+      <left></left>
+      <main-part></main-part>
+      <right></right>
+    </div>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
+import HeaderNav from "@/components/Header";
+import Left from "@/components/Left";
+import MainPart from "@/components/MainPart";
+import Right from "@/components/Right";
 
 export default {
   name: "Home",
   components: {
-    HelloWorld
+    HeaderNav,
+    Left,
+    Right,
+    MainPart
   }
 };
 </script>
+
+<style scoped lang="scss">
+.container {
+  display: flex;
+  width: 90%;
+  height: 200rem;
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 320px) and (max-width: 749px) {
+  @import "~@/assets/CSS/mobile.scss";
+}
+
+@media screen and (min-width: 750px) and (max-width: 1279px) {
+  @import "~@/assets/CSS/middle.scss";
+}
+</style>

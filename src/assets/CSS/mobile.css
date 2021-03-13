@@ -1,0 +1,15 @@
+.container {
+  flex-direction: column;
+  width: 100%;
+}
+.container .main-part {
+  order: 1;
+}
+.container .left {
+  order: 2;
+}
+.container .right {
+  order: 3;
+}
+
+/*# sourceMappingURL=mobile.css.map */

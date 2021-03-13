@@ -1,0 +1,13 @@
+.container {
+  flex-direction: column;
+  width: 100%;
+  .main-part{
+    order: 1;
+  }
+  .left{
+    order: 2;
+  }
+  .right{
+    order: 3;
+  }
+}

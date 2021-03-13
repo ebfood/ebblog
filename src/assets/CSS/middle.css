@@ -1,0 +1,17 @@
+.container {
+  width: 95%;
+  position: relative;
+}
+.container .main-part {
+  order: 3;
+}
+.container .left {
+  order: 1;
+}
+.container .right {
+  position: absolute;
+  top: 25rem;
+  order: 2;
+}
+
+/*# sourceMappingURL=middle.css.map */

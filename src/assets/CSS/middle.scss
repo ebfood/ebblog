@@ -1,0 +1,16 @@
+@import "variables.scss";
+.container {
+  width: 95%;
+  position: relative;
+  .main-part{
+    order: 3;
+  }
+  .left{
+    order: 1;
+  }
+  .right{
+    position: absolute;
+    top: $leftHeight;
+    order: 2;
+  }
+}
