@@ -1,6 +1,6 @@
 <template>
   <div class="sort">
-    <h4>分类</h4>
+    <h4>文章分类</h4>
     <ul>
       <li><a href="#" ref="#"><span class="iconfont">&#xe699;</span>html/CSS</a></li>
       <li><a href="#"><span class="iconfont">&#xe6f7;</span>JavaScript</a></li>
@@ -26,14 +26,16 @@ export default {
   align-items: flex-start;
   width: 100%;
   height: 16rem;
-  margin: 1rem 0;
+  padding: 1rem 0;
+  margin-bottom: 1rem;
   border-radius: 0.625rem;
   background-color: $frontColor;
 
   h4 {
     width: 100%;
-    margin-top: 1rem;
-    align-self: center;
+    padding-left: 1.5rem;
+    text-align: left;
+    color: #999;
   }
 
   span {

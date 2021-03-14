@@ -32,7 +32,7 @@ export default {
 .container {
   display: flex;
   width: $heartWidth;
-  height: 200rem;
+  // height: 200rem;
   margin: 1.8rem auto;
 }
 
