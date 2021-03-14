@@ -1,1 +1,1 @@
-{"version":3,"sourceRoot":"","sources":["middle.scss"],"names":[],"mappings":"AACA;EAEE;;AACA;EACE;;AAEF;EACE;;AAEF;EACE;EACA;EACA","file":"middle.css"}
+{"version":3,"sourceRoot":"","sources":["middle.scss","variables.scss"],"names":[],"mappings":"AACA;EAEE;;AACA;EACE;;AAEF;EACE;EACA;EACA;;AAEF;EACE;EACA,KCDS;EDET;EACA;EACA","file":"middle.css"}

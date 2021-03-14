@@ -11,7 +11,7 @@ export default {
 <style scoped lang="scss">
 @import "~@/assets/CSS/variables.scss";
 .right {
-  min-width: 16.25rem;
+  min-width: 20%;
   height: 25rem;
   background-color: blue;
 }

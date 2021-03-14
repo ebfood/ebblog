@@ -6,11 +6,15 @@
 }
 .container .left {
   order: 1;
+  width: 30%;
+  min-width: 14rem;
 }
 .container .right {
   position: absolute;
   top: 25rem;
   order: 2;
+  width: 30%;
+  min-width: 14rem;
 }
 
 /*# sourceMappingURL=middle.css.map */

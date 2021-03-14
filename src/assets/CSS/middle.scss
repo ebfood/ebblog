@@ -7,10 +7,14 @@
   }
   .left{
     order: 1;
+    width: 30%;
+    min-width: 14rem;
   }
   .right{
     position: absolute;
     top: $leftHeight;
     order: 2;
+    width: 30%;
+    min-width: 14rem;
   }
 }

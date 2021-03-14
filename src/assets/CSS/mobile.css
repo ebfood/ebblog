@@ -8,13 +8,19 @@
   margin: 0;
 }
 .container .main-part {
-  order: 1;
+  order: 2;
+  width: 100%;
+  padding: 1rem;
 }
 .container .left {
-  order: 2;
+  order: 1;
+  width: 100%;
+  padding: 1rem;
 }
 .container .right {
   order: 3;
+  width: 100%;
+  padding: 1rem;
 }
 
 /*# sourceMappingURL=mobile.css.map */

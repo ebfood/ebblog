@@ -1,18 +1,33 @@
 <template>
-  <div class="left">LEFT</div>
+  <div class="left">
+    <profile></profile>
+    <sort></sort>
+  </div>
 </template>
 
 <script>
+import Profile from "@/components/Profile";
+import Sort from "@/components/Sort";
+
 export default {
-  name: "Left"
+  name: "Left",
+  components: {
+    Profile,
+    Sort
+  }
 };
 </script>
 
 <style scoped lang="scss">
 @import "~@/assets/CSS/variables.scss";
+
 .left {
-  min-width: 16.25rem;
-  height: 25rem;
-  background-color: blueviolet;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.5rem;
+  width: 20%;
+  // height: 25rem;
+  // background-color: blueviolet;
 }
 </style>

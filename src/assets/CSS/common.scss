@@ -14,9 +14,20 @@ body {
   // font-family: Arial, Helvetica, STHeiTi, sans-serif;
   background-color: #f3f5f9;
 }
-
 a {
   text-decoration: none;
+  color: $fontColor;
+  border-radius: 0.6rem;
+  padding: 0 0.2rem;
+  &:hover {
+    color: $hoverFontColor;
+    background-color: $hoverBGColor;
+  }
+}
+
+
+h1,h2,h3,h4,h5,h6 {
+  margin: 0;
 }
 
 li {

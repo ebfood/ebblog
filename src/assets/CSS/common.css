@@ -12,6 +12,17 @@ body {
 
 a {
   text-decoration: none;
+  color: #eeefef;
+  border-radius: 0.6rem;
+  padding: 0 0.2rem;
+}
+a:hover {
+  color: skyblue;
+  background-color: #3f485f;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
 }
 
 li {

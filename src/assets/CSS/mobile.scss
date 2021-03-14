@@ -8,14 +8,20 @@
   margin: 0;
 
   .main-part {
-    order: 1;
+    order: 2;
+    width: 100%;
+    padding: 1rem;
   }
 
   .left {
-    order: 2;
+    order: 1;
+    width: 100%;
+    padding: 1rem;
   }
 
   .right {
     order: 3;
+    width: 100%;
+    padding: 1rem;
   }
 }
