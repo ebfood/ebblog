@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+html {
+  background-color: #191a27;
+}
+
 body {
   min-width: 320px;
   line-height: 1.5;

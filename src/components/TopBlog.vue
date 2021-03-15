@@ -2,17 +2,19 @@
   <div class="top-blog">
     <h4>置顶文章</h4>
     <ul>
-      <li><a href="#" class="tags">利用媒体查询实现响应式布局,利用媒体查询实现响应式布局</a></li>
-      <li><a href="#" class="tags">不同屏幕下, 通过媒体查询改变布局容器的大小</a></li>
-      <li><a href="#" class="tags">再改变里面的子元素排列方式, 从而实现在不同屏幕</a></li>
-      <li><a href="#" class="tags">样式不同 一般叫做container, 直接用@media设置</a></li>
+      <li v-for="item of data" :key="item.id">
+        <a href="#" class="tags">{{ item.title }}</a>
+      </li>
     </ul>
   </div>
 </template>
 
 <script>
 export default {
-  name: "top-blog"
+  name: "top-blog",
+  props: {
+    data: Array
+  }
 };
 </script>
 
@@ -25,6 +27,7 @@ export default {
   align-items: flex-start;
   width: 100%;
   padding: 1rem 0;
+  margin-bottom: 1rem;
   border-radius: 0.625rem;
   background-color: $frontColor;
 

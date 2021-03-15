@@ -2,18 +2,19 @@
   <div class="tag-box">
     <h4>热门标签</h4>
     <ul>
-      <li><a href="#" class="tags">#响应式</a></li>
-      <li><a href="#" class="tags">#CSS</a></li>
-      <li><a href="#" class="tags">#REM</a></li>
-      <li><a href="#" class="tags">#移动端</a></li>
-      <li><a href="#" class="tags">#flex</a></li>
+      <li v-for="(item, index) of this.data" :key="index">
+        <a href="#" class="tags">#{{ item.name }}</a>
+      </li>
     </ul>
   </div>
 </template>
 
 <script>
 export default {
-  name: "Tag"
+  name: "Tag",
+  props: {
+    data: Array
+  }
 };
 </script>
 

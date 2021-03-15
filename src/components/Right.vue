@@ -1,8 +1,8 @@
 <template>
   <div class="right">
+    <top-blog :data="tops"></top-blog>
+    <tag-box :data="tags"></tag-box>
     <Doing></Doing>
-    <tag-box></tag-box>
-    <top-blog></top-blog>
   </div>
 </template>
 
@@ -16,6 +16,10 @@ export default {
     TagBox,
     Doing,
     TopBlog
+  },
+  props: {
+    tags: Array, //标签以及数量
+    tops: Array //置顶文章
   }
 };
 </script>

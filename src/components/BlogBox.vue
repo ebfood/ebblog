@@ -3,15 +3,12 @@
     <a href="#"></a>
     <div
       class="cover"
-      :style="{ 'background-image': 'url(' + imgUrl + ')' }"
+      :style="{ 'background-image': 'url(' + data.cover + ')' }"
     ></div>
     <div class="content">
-      <h2>利用媒体查询实现响应式布局</h2>
-      <p>不同屏幕下, 通过媒体查询改变布局容器的大小,
-        再改变里面的子元素排列方式,
-        从而实现在不同屏幕下, 看到的布局样式不同
-        一般叫做container, 直接用@media设置</p>
-      <span>2021-3-14</span>
+      <h2>{{ data.title }}</h2>
+      <p>{{ data.desc }}</p>
+      <span>{{ data.date }}</span>
     </div>
   </div>
 </template>
@@ -19,10 +16,8 @@
 <script>
 export default {
   name: "blog-box",
-  data() {
-    return {
-      imgUrl: "http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071002.png"
-    };
+  props: {
+    data: Object
   }
 };
 </script>

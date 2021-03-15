@@ -1,10 +1,6 @@
 <template>
   <div class="main-part">
-    <blog-box></blog-box>
-    <blog-box></blog-box>
-    <blog-box></blog-box>
-    <blog-box></blog-box>
-    <blog-box></blog-box>
+    <blog-box v-for="item of blogs" :key="item.id" :data="item"> </blog-box>
   </div>
 </template>
 
@@ -15,6 +11,9 @@ export default {
   name: "MainPart",
   components: {
     BlogBox
+  },
+  props: {
+    blogs: Array
   }
 };
 </script>

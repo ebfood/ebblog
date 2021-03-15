@@ -8,6 +8,10 @@ $no: 15; //划分15分
   box-sizing: border-box;
 }
 
+html {
+  background-color: $backColor;
+}
+
 body {
   min-width: 320px;
   line-height: 1.5;

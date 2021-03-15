@@ -69,3 +69,35 @@ iPad or 手机横屏![image-20210315114458888](https://ebcode.oss-cn-shanghai.al
 
   
 
+# axios请求文章数据
+
+## 模拟后台数据
+
+使用mock.js
+
+1.    npm install mockjs -S
+
+2. src下创建mock目录
+
+> 	mock
+   > 		index.js
+> 		json
+   > 			index.json
+
+3. index.js 中
+
+   ```javascript
+   const Mock = require("mockjs");
+   Mock.mock("/api/index", "get", require("./json/index.json"));
+   ```
+   
+4. main.js里面
+   `require("./mock");`
+
+5. axios请求 /api/index就好了
+
+## 数据处理
+
+设置变量, 把数据按照组件分类, 然后传给不同组件.
+![image-20210315155947659](https://ebcode.oss-cn-shanghai.aliyuncs.com/img/image-20210315155947659.png)
+
