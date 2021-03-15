@@ -77,7 +77,7 @@ export default {
             amount: tagData[key]
           });
         }
-        this.tagList.sort((a, b) => b.amount - a.amount);
+        this.tagList.sort((a, b) => b.amount.length - a.amount.length);
       });
     }
   },
