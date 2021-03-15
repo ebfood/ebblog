@@ -31,3 +31,41 @@
 
 ![image-20210313185119165](https://ebcode.oss-cn-shanghai.aliyuncs.com/img/image-20210313185119165.png)
 
+
+
+# 首页界面搭建
+
+ui风格要一致, 首先就是要黑色主题, 护眼啊! 然后就是我想让博客有点模块化的感觉, 所以把功能都写成卡片的形式.
+
+来康康最终结果
+
+PC
+![image-20210315114254931](https://ebcode.oss-cn-shanghai.aliyuncs.com/img/image-20210315114254931.png)
+
+iPad or 手机横屏![image-20210315114458888](https://ebcode.oss-cn-shanghai.aliyuncs.com/img/image-20210315114458888.png)
+
+手机
+
+<img src="https://ebcode.oss-cn-shanghai.aliyuncs.com/img/image-20210315114546181.png" alt="image-20210315114546181" style="zoom:50%;" />
+
+
+
+思路:
+最外层用container包裹左中右三个大组件, 大组件装着一堆卡片小组件, 屏幕大小不同只需要调整container中的大组件排列顺序就好了
+
++ 在pc, 横向flex, 中间的文章内容flex: 1;
++ 在iPad, 把右侧组件 position: absolute; 让他定位到屏幕左边, 相对于他的父亲container, top设置成左边的高度.
++ 移动端 纵向flex, width都改成100%, 给左中右组件一个padding, 挤出来一个边距
+
+这些个卡片组件都不难, 很好布局, 具体都不写了, 除了有个背景图这里:
+
++ 文章板块的背景图这里, 因为以后要用v-for构造文章, 所以在html中style属性里面指定 background-image的url, 然后在scss中指定背景的属性, 以保证背景可以缩放且居中.
+
+  ```scss
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  background-position: center center; //很重要
+  ```
+
+  
+
