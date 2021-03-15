@@ -1,5 +1,6 @@
 <template>
   <div class="blog-box">
+    <a href="#"></a>
     <div
       class="cover"
       :style="{ 'background-image': 'url(' + imgUrl + ')' }"
@@ -31,10 +32,24 @@ export default {
 
 .blog-box {
   overflow: hidden;
+  position: relative;
   width: 100%;
   margin-bottom: 1rem;
   border-radius: 0.625rem;
   background-color: $frontColor;
+
+  a {
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    &:hover {
+      background-color: transparent;
+    }
+  }
 
   .cover {
     display: flex;
@@ -53,6 +68,7 @@ export default {
   .content {
     padding: 0 1rem;
     margin: 0.5rem 0;
+
     span {
       display: block;
       color: #aaa;
