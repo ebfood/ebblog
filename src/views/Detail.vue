@@ -1,9 +1,9 @@
 <template>
-  <div class="home">
+  <div class="detail">
     <header-nav></header-nav>
     <div class="container">
       <left></left>
-      <main-part :blogs="blogList"></main-part>
+      <article-container></article-container>
       <right :tags="tagList" :tops="topList"></right>
     </div>
     <footer-nav></footer-nav>
@@ -14,18 +14,18 @@
 // @ is an alias to /src
 import HeaderNav from "@/components/Header";
 import Left from "@/components/Left";
-import MainPart from "@/components/MainPart";
+import ArticleContainer from "@/components/ArticleContainer";
 import Right from "@/components/Right";
 import FooterNav from "@/components/Footer";
 import axios from "axios";
 
 export default {
-  name: "Home",
+  name: "Detail",
   components: {
     HeaderNav,
     Left,
     Right,
-    MainPart,
+    ArticleContainer,
     FooterNav
   },
   data() {
@@ -33,7 +33,9 @@ export default {
       tagList: [],
       category: {},
       topList: [],
-      blogList: []
+      blogList: [],
+      articleID: "",
+      article: {}
     };
   },
   methods: {
@@ -80,20 +82,25 @@ export default {
         this.tagList.sort((a, b) => b.amount - a.amount);
       });
     },
+    getArticleID() {
+      this.articleID = this.$route.params.id;
+    },
     getDetail() {
       axios({
         method: "get",
         url: "/api/detail",
         data: {
-          id: "0001"
+          id: this.articleID
         }
       }).then(res => {
-        console.log(res);
+        this.article = res.data;
       });
     }
   },
   mounted() {
     this.getBlog();
+    this.getArticleID();
+    this.getDetail();
   }
 };
 </script>

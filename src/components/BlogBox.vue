@@ -1,6 +1,5 @@
 <template>
-  <div class="blog-box">
-    <a href="#"></a>
+  <div class="blog-box" @click="handleClick(data.id)">
     <div
       class="cover"
       :style="{ 'background-image': 'url(' + data.cover + ')' }"
@@ -18,6 +17,11 @@ export default {
   name: "blog-box",
   props: {
     data: Object
+  },
+  methods: {
+    handleClick(id) {
+      this.$router.push(`detail/${id}`);
+    }
   }
 };
 </script>
@@ -33,18 +37,22 @@ export default {
   border-radius: 0.625rem;
   background-color: $frontColor;
 
-  a {
-    display: block;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-
-    &:hover {
-      background-color: transparent;
-    }
+  &:hover {
+    cursor: pointer;
   }
+
+  //a {
+  //  display: block;
+  //  position: absolute;
+  //  top: 0;
+  //  bottom: 0;
+  //  left: 0;
+  //  right: 0;
+  //
+  //  &:hover {
+  //    background-color: transparent;
+  //  }
+  //}
 
   .cover {
     display: flex;
