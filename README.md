@@ -69,11 +69,11 @@ iPad or 手机横屏![image-20210315114458888](https://ebcode.oss-cn-shanghai.al
 
   
 
-# axios请求文章数据
 
-## 模拟后台数据
 
-### 主页
+# 模拟后台数据
+
+## 主页
 
 使用mock.js
 
@@ -101,7 +101,7 @@ iPad or 手机横屏![image-20210315114458888](https://ebcode.oss-cn-shanghai.al
 设置变量, 把数据按照组件分类, 然后传给不同组件.
 ![image-20210315155947659](https://ebcode.oss-cn-shanghai.aliyuncs.com/img/image-20210315155947659.png)
 
-### 详情页
+## 详情页
 
 编程式导航: 通过js的方式去跳转, 经典应用之列表跳详情
 
@@ -134,5 +134,105 @@ mounted () {
 }
 ```
 
-## 
+## 文章内容
 
+带参数请求, 在mock.js中用正则表达式拦截, 并且拿到参数, 再根据参数模拟返回对应文章
+
+```js
+Mock.mock(RegExp("api/detail.*"), "get", options => {
+  let id = JSON.parse(options.body).id;
+  for (let i = 0; i < data.length; i++) {
+    if (id === data[i].id) {
+      return {
+        article: {
+          title: data[i].title,
+          date: data[i].date,
+          content: data[i].content,
+          cover: data[i].cover
+        }
+      };
+    }
+  }
+});
+```
+
+接着在详情页axios请求, 把页面的id作为参数
+
+```js
+getDetail() {
+      axios({
+        method: "get",
+        url: "/api/detail",
+        data: {
+          id: this.articleID
+        }
+      }).then(res => {
+        this.article = res.data;
+      });
+    }
+```
+
+![image-20210317095651544](https://ebcode.oss-cn-shanghai.aliyuncs.com/img/image-20210317095651544.png)
+
+返回成功啦, 这样子markdown的源码就有了, 剩下的就是渲染md, 注意这里要在activated里面选择
+
+
+
+# 渲染markdown
+
+## 组件
+
+https://github.com/miaolz123/vue-markdown
+用vue-markdown (给了星星了)
+
+```
+npm install --save vue-markdown
+```
+
+然后正常引入, 当成组件, 就在这时, 会有个坑, 说你babel有问题, 行吧, 又一个issue给了解决方法
+
+```
+npm install --save babel-runtime
+```
+
+```html
+<vue-markdown :source="this.article.article.content"></vue-markdown>
+```
+
+接着就可以 这样引入源码, 就可以渲染了,
+
+## CSS
+
+但是样式简直一团糟
+然后就找到了这个项目
+
+https://github.com/sindresorhus/github-markdown-css,可以吧css用在上面啦, 但是这个是白色的, 有个兄弟fork了一个dark的https://github.com/hyrious/github-markdown-css, 多么的可爱, 我又按照网页的整体配色改动了几处.
+
+main.js引入css之后
+
+```html
+<div class="markdown-body">
+          <vue-markdown :source="this.article.article.content"></vue-markdown>
+        </div>
+```
+
+这时候已经排版正常了, 我在给盒子自定义一些css
+
+```css
+.markdown-body {
+  width: 100%;
+  border-radius: 0.625rem;
+  padding: 1rem;
+}
+```
+
+## 代码高亮
+
+https://github.com/highlightjs/highlight.js
+用这个库
+
+```
+npm install highlight.js
+```
+
+大功告成![image-20210317124435391](https://ebcode.oss-cn-shanghai.aliyuncs.com/img/image-20210317124435391.png)

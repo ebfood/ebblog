@@ -20,6 +20,10 @@ const routes = [
 
 const router = new VueRouter({
   routes
+  // scrollBehavior() {
+  //   console.log(2);
+  //   return { x: 0, y: 0 };
+  // }
 });
 
 export default router;

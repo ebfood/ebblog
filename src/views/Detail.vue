@@ -3,7 +3,11 @@
     <header-nav></header-nav>
     <div class="container">
       <left></left>
-      <article-container></article-container>
+      <main-part>
+        <div class="markdown-body">
+          <vue-markdown :source="this.article.article.content" v-highlight></vue-markdown>
+        </div>
+      </main-part>
       <right :tags="tagList" :tops="topList"></right>
     </div>
     <footer-nav></footer-nav>
@@ -14,9 +18,10 @@
 // @ is an alias to /src
 import HeaderNav from "@/components/Header";
 import Left from "@/components/Left";
-import ArticleContainer from "@/components/ArticleContainer";
+import MainPart from "@/components/MainPart";
 import Right from "@/components/Right";
 import FooterNav from "@/components/Footer";
+import VueMarkdown from "vue-markdown";
 import axios from "axios";
 
 export default {
@@ -25,8 +30,9 @@ export default {
     HeaderNav,
     Left,
     Right,
-    ArticleContainer,
-    FooterNav
+    MainPart,
+    FooterNav,
+    VueMarkdown
   },
   data() {
     return {
@@ -67,8 +73,7 @@ export default {
             date: item.date,
             cover: item.cover,
             title: item.title,
-            desc: item.description,
-            content: item.content
+            desc: item.description
           });
         }
         // debugger;
@@ -94,6 +99,7 @@ export default {
         }
       }).then(res => {
         this.article = res.data;
+        console.log(this.article.article.content);
       });
     }
   },
@@ -113,6 +119,12 @@ export default {
   width: $heartWidth;
   // height: 200rem;
   margin: 1.8rem auto;
+}
+
+.markdown-body {
+  width: 100%;
+  border-radius: 0.625rem;
+  padding: 1rem;
 }
 
 @media screen and (min-width: 320px) and (max-width: 749px) {

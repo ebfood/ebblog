@@ -7,6 +7,7 @@ Mock.mock("/api/index", "get", mdList);
 
 Mock.mock(RegExp("api/detail.*"), "get", options => {
   let id = JSON.parse(options.body).id;
+  console.log(id);
   for (let i = 0; i < data.length; i++) {
     if (id === data[i].id) {
       return {

@@ -3,7 +3,10 @@
     <header-nav></header-nav>
     <div class="container">
       <left></left>
-      <main-part :blogs="blogList"></main-part>
+      <main-part>
+        <blog-box v-for="item of this.blogList" :key="item.id" :data="item">
+        </blog-box>
+      </main-part>
       <right :tags="tagList" :tops="topList"></right>
     </div>
     <footer-nav></footer-nav>
@@ -18,6 +21,7 @@ import MainPart from "@/components/MainPart";
 import Right from "@/components/Right";
 import FooterNav from "@/components/Footer";
 import axios from "axios";
+import BlogBox from "@/components/BlogBox";
 
 export default {
   name: "Home",
@@ -26,7 +30,8 @@ export default {
     Left,
     Right,
     MainPart,
-    FooterNav
+    FooterNav,
+    BlogBox
   },
   data() {
     return {
@@ -65,8 +70,7 @@ export default {
             date: item.date,
             cover: item.cover,
             title: item.title,
-            desc: item.description,
-            content: item.content
+            desc: item.description
           });
         }
         // debugger;
@@ -78,17 +82,6 @@ export default {
           });
         }
         this.tagList.sort((a, b) => b.amount.length - a.amount.length);
-      });
-    },
-    getDetail() {
-      axios({
-        method: "get",
-        url: "/api/detail",
-        data: {
-          id: "0001"
-        }
-      }).then(res => {
-        console.log(res);
       });
     }
   },
