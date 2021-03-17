@@ -73,6 +73,8 @@ iPad or 手机横屏![image-20210315114458888](https://ebcode.oss-cn-shanghai.al
 
 ## 模拟后台数据
 
+### 主页
+
 使用mock.js
 
 1.    npm install mockjs -S
@@ -96,8 +98,41 @@ iPad or 手机横屏![image-20210315114458888](https://ebcode.oss-cn-shanghai.al
 
 5. axios请求 /api/index就好了
 
-## 数据处理
-
 设置变量, 把数据按照组件分类, 然后传给不同组件.
 ![image-20210315155947659](https://ebcode.oss-cn-shanghai.aliyuncs.com/img/image-20210315155947659.png)
+
+### 详情页
+
+编程式导航: 通过js的方式去跳转, 经典应用之列表跳详情
+
+```javascript
+// 在标签里绑定@click="handleClick(item.id)"
+// 在methods里面写回调
+handleClick(id) {
+  this.$router.push(`/detail/${id}`)
+  
+  // 还可以根据命名跳转
+}
+```
+
+```js
+// index.js中
+{
+	path: 'detail/:id',
+	component: Detail
+}
+```
+
+只要是符合格式, 都会路由到detail
+然后在Detail组件中
+
+```js
+// 组件中
+mounted () {
+	console.log(this.$router.params.id);
+  // ajax....
+}
+```
+
+## 
 
