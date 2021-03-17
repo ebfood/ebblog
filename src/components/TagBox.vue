@@ -3,7 +3,9 @@
     <h4>热门标签</h4>
     <ul>
       <li v-for="(item, index) of this.data" :key="index">
-        <a href="#" class="tags">#{{ item.name }}</a>
+        <router-link :to="'/tag/' + item.name" class="tags">
+          #{{ item.name }}
+        </router-link>
       </li>
     </ul>
   </div>

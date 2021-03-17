@@ -33,10 +33,12 @@ Mock.mock(RegExp("api/category.*"), "get", options => {
 });
 
 Mock.mock(RegExp("api/tag.*"), "get", options => {
-  let tag = JSON.parse(options.body).tag;
+  let tag = JSON.parse(options.body).name;
+  console.log(tag);
   let res = [];
+  //debugger;
   for (let i = 0; i < data.length; i++) {
-    if (tag in data[i].tag) {
+    if (data[i].tag.includes(tag)) {
       res.push(data[i]);
     }
   }

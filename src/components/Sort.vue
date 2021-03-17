@@ -3,19 +3,19 @@
     <h4>文章分类</h4>
     <ul>
       <li>
-        <router-link :to="'/category/front-end'">
+        <router-link :to="'/category/前端'">
           <span class="iconfont">&#xe699;</span>前端
         </router-link>
       </li>
       <!--      <li><a href="#"><span class="iconfont">&#xe6f7;</span>JavaScript</a></li>-->
       <!--      <li><a href="#"><span class="iconfont">&#xe669;</span>Vue</a></li>-->
       <li>
-        <router-link :to="'/category/algorithm'">
+        <router-link :to="'/category/算法题'">
           <span class="iconfont">&#xe6b3;</span>算法题
         </router-link>
       </li>
       <li>
-        <router-link :to="'/category/cong'">
+        <router-link :to="'/category/葱妹自救指南'">
           <span class="iconfont">&#xe61b;</span>葱妹自救指南
         </router-link>
       </li>
