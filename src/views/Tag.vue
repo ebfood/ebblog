@@ -72,7 +72,7 @@ export default {
             date: item.date,
             cover: item.cover,
             title: item.title,
-            desc: item.description
+            description: item.description
           });
         }
         // debugger;

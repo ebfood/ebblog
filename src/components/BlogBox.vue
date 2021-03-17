@@ -6,7 +6,7 @@
     ></div>
     <div class="content">
       <h2>{{ data.title }}</h2>
-      <p>{{ data.desc }}</p>
+      <p>{{ data.description }}</p>
       <span>{{ data.date }}</span>
     </div>
   </div>
