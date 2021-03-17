@@ -3,7 +3,7 @@
     <img src="@/assets/images/avatar.jpeg" class="avatar" alt="avatar" />
     <div class="content">
       <h4>ebfood</h4>
-      <a href="#">about me</a>
+<!--      <a href="#">about me</a>-->
     </div>
   </div>
 </template>

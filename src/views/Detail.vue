@@ -106,6 +106,12 @@ export default {
     this.getBlog();
     this.getArticleID();
     this.getDetail();
+  },
+  watch: {
+    $route() {
+      this.getArticleID();
+      this.getDetail();
+    }
   }
 };
 </script>

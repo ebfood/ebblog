@@ -3,7 +3,9 @@
     <h4>置顶文章</h4>
     <ul>
       <li v-for="item of data" :key="item.id">
-        <a href="#" class="tags">{{ item.title }}</a>
+        <router-link :to="'/detail/' + item.id" class="tags">
+          {{ item.title }}
+        </router-link>
       </li>
     </ul>
   </div>
