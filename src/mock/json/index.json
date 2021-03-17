@@ -3,7 +3,7 @@
     {
       "id": "0001",
       "date": "2021-3-15",
-      "category": "前端",
+      "category": "front-end",
       "tag": [
         "vue",
         "响应式布局",
@@ -18,7 +18,7 @@
     {
       "id": "0002",
       "date": "2021-3-15",
-      "category": "前端",
+      "category": "algorithm",
       "tag": [
         "CSS"
       ],
@@ -31,7 +31,7 @@
     {
       "id": "0003",
       "date": "2021-3-15",
-      "category": "前端",
+      "category": "cong",
       "tag": [
         "CSS",
         "移动端布局"

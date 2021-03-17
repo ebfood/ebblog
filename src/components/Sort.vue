@@ -2,11 +2,23 @@
   <div class="sort">
     <h4>文章分类</h4>
     <ul>
-      <li><a href="#" ref="#"><span class="iconfont">&#xe699;</span>前端</a></li>
-<!--      <li><a href="#"><span class="iconfont">&#xe6f7;</span>JavaScript</a></li>-->
-<!--      <li><a href="#"><span class="iconfont">&#xe669;</span>Vue</a></li>-->
-      <li><a href="#"><span class="iconfont">&#xe6b3;</span>算法题</a></li>
-      <li><a href="#"><span class="iconfont">&#xe61b;</span>葱妹自救指南</a></li>
+      <li>
+        <router-link :to="'/category/front-end'">
+          <span class="iconfont">&#xe699;</span>前端
+        </router-link>
+      </li>
+      <!--      <li><a href="#"><span class="iconfont">&#xe6f7;</span>JavaScript</a></li>-->
+      <!--      <li><a href="#"><span class="iconfont">&#xe669;</span>Vue</a></li>-->
+      <li>
+        <router-link :to="'/category/algorithm'">
+          <span class="iconfont">&#xe6b3;</span>算法题
+        </router-link>
+      </li>
+      <li>
+        <router-link :to="'/category/cong'">
+          <span class="iconfont">&#xe61b;</span>葱妹自救指南
+        </router-link>
+      </li>
     </ul>
   </div>
 </template>

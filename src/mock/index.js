@@ -20,3 +20,25 @@ Mock.mock(RegExp("api/detail.*"), "get", options => {
     }
   }
 });
+
+Mock.mock(RegExp("api/category.*"), "get", options => {
+  let category = JSON.parse(options.body).name;
+  let res = [];
+  for (let i = 0; i < data.length; i++) {
+    if (category === data[i].category) {
+      res.push(data[i]);
+    }
+  }
+  return res;
+});
+
+Mock.mock(RegExp("api/tag.*"), "get", options => {
+  let tag = JSON.parse(options.body).tag;
+  let res = [];
+  for (let i = 0; i < data.length; i++) {
+    if (tag in data[i].tag) {
+      res.push(data[i]);
+    }
+  }
+  return res;
+});

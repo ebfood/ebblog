@@ -236,3 +236,22 @@ npm install highlight.js
 ```
 
 大功告成![image-20210317124435391](https://ebcode.oss-cn-shanghai.aliyuncs.com/img/image-20210317124435391.png)
+
+
+
+# 实现分类和标签, 置顶文章的路由
+
+## vue中的坑
+
+分类选项卡显然应该用动态路由去做, 这就导致了同一个地址,参数不同, vue的页面是不会刷新的, 官方给出了解决方法使用watch监听路径的变化, 然后回调函数
+
+```javascript
+watch: {
+    $route() {
+      this.getArticleID();
+      this.getDetail();
+    }
+  }
+```
+
+还是老思路, 通过属性发ajax, 拿到了数据往页面上渲染就好.

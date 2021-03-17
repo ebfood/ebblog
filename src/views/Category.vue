@@ -1,12 +1,11 @@
 <template>
-  <div class="detail">
+  <div class="category">
     <header-nav></header-nav>
     <div class="container">
       <left></left>
       <main-part>
-        <div class="markdown-body">
-          <vue-markdown :source="this.article.article.content" v-highlight></vue-markdown>
-        </div>
+        <blog-box v-for="item of this.article" :key="item.id" :data="item">
+        </blog-box>
       </main-part>
       <right :tags="tagList" :tops="topList"></right>
     </div>
@@ -21,18 +20,18 @@ import Left from "@/components/Left";
 import MainPart from "@/components/MainPart";
 import Right from "@/components/Right";
 import FooterNav from "@/components/Footer";
-import VueMarkdown from "vue-markdown";
+import BlogBox from "@/components/BlogBox";
 import axios from "axios";
 
 export default {
-  name: "Detail",
+  name: "Category",
   components: {
     HeaderNav,
     Left,
     Right,
     MainPart,
     FooterNav,
-    VueMarkdown
+    BlogBox
   },
   data() {
     return {
@@ -88,14 +87,14 @@ export default {
       });
     },
     getArticleID() {
-      this.articleID = this.$route.params.id;
+      this.articleID = this.$route.params.name;
     },
     getDetail() {
       axios({
         method: "get",
-        url: "/api/detail",
+        url: "/api/category",
         data: {
-          id: this.articleID
+          name: this.articleID
         }
       }).then(res => {
         this.article = res.data;
@@ -106,6 +105,12 @@ export default {
     this.getBlog();
     this.getArticleID();
     this.getDetail();
+  },
+  watch: {
+    $route() {
+      this.getArticleID();
+      this.getDetail();
+    }
   }
 };
 </script>
@@ -118,12 +123,6 @@ export default {
   width: $heartWidth;
   // height: 200rem;
   margin: 1.8rem auto;
-}
-
-.markdown-body {
-  width: 100%;
-  border-radius: 0.625rem;
-  padding: 1rem;
 }
 
 @media screen and (min-width: 320px) and (max-width: 749px) {
