@@ -99,7 +99,6 @@ export default {
         }
       }).then(res => {
         this.article = res.data;
-        console.log(this.article.article.content);
       });
     }
   },
