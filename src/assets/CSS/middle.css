@@ -8,10 +8,11 @@
   order: 1;
   width: 30%;
   min-width: 14rem;
+  height: 67.5rem;
 }
 .container .right {
   position: absolute;
-  top: 20.5rem;
+  top: 22.5rem;
   order: 2;
   width: 30%;
   min-width: 14rem;

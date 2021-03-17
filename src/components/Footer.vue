@@ -20,7 +20,7 @@ export default {
   height: 4rem;
   padding: 0 7.5%;
   background-color: $frontColor;
-  p{
+  p {
     color: #999;
     font-size: 0.9rem;
     font-weight: 600;

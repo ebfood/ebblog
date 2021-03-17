@@ -5,7 +5,10 @@
       <left></left>
       <main-part>
         <div class="markdown-body">
-          <vue-markdown :source="this.article.article.content" v-highlight></vue-markdown>
+          <vue-markdown
+            :source="this.article.article.content"
+            v-highlight
+          ></vue-markdown>
         </div>
       </main-part>
       <right :tags="tagList" :tops="topList"></right>
@@ -23,6 +26,7 @@ import Right from "@/components/Right";
 import FooterNav from "@/components/Footer";
 import VueMarkdown from "vue-markdown";
 import axios from "axios";
+import Global from "@/components/Global";
 
 export default {
   name: "Detail",
@@ -41,52 +45,15 @@ export default {
       topList: [],
       blogList: [],
       articleID: "",
-      article: {}
+      article: {
+        // 不这么写会有警告，模版里调用不到
+        article: {
+          content: ""
+        }
+      }
     };
   },
   methods: {
-    getBlog() {
-      axios.get("/api/index").then(res => {
-        let mdList = res.data.mdList;
-        let tagData = {};
-        for (let item of mdList) {
-          // 处理tag
-          for (let tag of item.tag) {
-            tag in tagData
-              ? tagData[tag].push(item.id)
-              : (tagData[tag] = [item.id]);
-          }
-          // 处理类别
-          item.category in this.category
-            ? this.category[item.category].push(item.id)
-            : (this.category[item.category] = [item.id]);
-          // 添加top
-          if (item.top) {
-            this.topList.push({
-              id: item.id,
-              title: item.title
-            });
-          }
-          // 打包blog，给blogBox组件
-          this.blogList.push({
-            id: item.id,
-            date: item.date,
-            cover: item.cover,
-            title: item.title,
-            description: item.description
-          });
-        }
-        // debugger;
-        // 排序tag
-        for (let key in tagData) {
-          this.tagList.push({
-            name: key,
-            amount: tagData[key]
-          });
-        }
-        this.tagList.sort((a, b) => b.amount.length - a.amount.length);
-      });
-    },
     getArticleID() {
       this.articleID = this.$route.params.id;
     },
@@ -103,7 +70,7 @@ export default {
     }
   },
   beforeMount() {
-    this.getBlog();
+    Global.methods.getCpnData(this);
     this.getArticleID();
     this.getDetail();
   },
